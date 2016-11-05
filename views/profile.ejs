@@ -1,4 +1,4 @@
-
+<html>
   <body>
     login=: <%= login %>
     <% if(login===false){ %>
@@ -27,14 +27,6 @@
             <strong>name</strong>: <%= user.facebook.name %>
           <% } %>
 
-          <% if (user.twitter.id != null) { %>
-            <h2 class="fa fa-twitter"> Twitter</h2><br>
-            <img src="https://avatars.io/twitter/<%= user.twitter.username %>" class="img-circle"><br>
-            <strong>id</strong>: <%= user.twitter.id %><br>
-            <strong>token</strong>: <%= user.twitter.token %><br>
-            <strong>username</strong>: <%= user.twitter.username %><br>
-            <strong>displayName</strong>: <%= user.twitter.displayName %>
-          <% } %>
         </div>
       </div>
     </div>
