@@ -1,43 +1,7 @@
 <html>
   <head>
-    <style>
-      * { box-sizing: border-box; }
-      
-      /* force scrollbar */
-      html { overflow-y: scroll; }
-      
-      body { font-family: sans-serif; }
-      
-      /* ---- grid ---- */
-      
-      .grid {
-        background: #DDD;
-      }
-      
-      /* clear fix */
-      .grid:after {
-        content: '';
-        display: block;
-        clear: both;
-      }
-      
-      /* ---- .grid-item ---- */
-      
-      .grid-sizer,
-      .grid-item {
-        width: 33.333%;
-      }
-      
-      .grid-item {
-        float: left;
-      }
-      
-      .grid-item img {
-        display: block;
-        max-width: 100%;
-      }
-
-    </style>
+      <link rel="stylesheet" href="/stylesheets/style.css" type="text/css" />
+    
   </head>
   <body>
     <div class="col-sm-8 col-sm-offset-2">
@@ -54,54 +18,58 @@
     <div class="grid-sizer"></div>
     <div class="grid-item">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+      <button class="like"></button>
     </div>
     <div class="grid-item">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/submerged.jpg" />
+      <span class="like"></span>
     </div>
     <div class="grid-item">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/look-out.jpg" />
+      <span class="like"></span>
     </div>
     <div class="grid-item">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/one-world-trade.jpg" />
+      <span class="like"></span>
     </div>
     <div class="grid-item">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/drizzle.jpg" />
+      <span class="like"></span>
     </div>
     <div class="grid-item">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/cat-nose.jpg" />
+      <span class="like"></span>
     </div>
     <div class="grid-item">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/contrail.jpg" />
+      <span class="like"></span>
     </div>
     <div class="grid-item">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/golden-hour.jpg" />
+      <span class="like"></span>
     </div>
     <div class="grid-item">
       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
+      <span class="like"></span>
     </div>
     <div class="grid-item">
-      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/flight-formation.jpg" />
+      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/82/orange-tree.jpg" />
+      <span class="like"></span>
     </div>
   </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
+    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
+    <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
     
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.js"></script>
-  <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.js"></script>
-  <script src="https://unpkg.com/masonry-layout@4.1/dist/masonry.pkgd.js"></script>
-  
-  <script>
-    // external js: masonry.pkgd.js, imagesloaded.pkgd.js
-  
-  // init Masonry
-  var $grid = $('.grid').masonry({
-    itemSelector: '.grid-item',
-    percentPosition: true,
-    columnWidth: '.grid-sizer'
-  });
-  // layout Isotope after each image loads
-  $grid.imagesLoaded().progress( function() {
-    $grid.masonry();
-  });  
-  
-  </script>
+    <!--AngularJS-->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular-resource.min.js"></script>
+    <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+
+    <script src="scripts/app.js"></script>
+    <script src="scripts/controllers.js"></script>
+    <script src="scripts/services.js"></script>
+      
+    <script src="/scripts/pin.js"></script>
 
 </html>
