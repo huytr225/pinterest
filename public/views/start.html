@@ -1,0 +1,10 @@
+
+<h1>Masonry - imagesLoaded progress</h1>
+
+<div masonry class="grid">
+  <div class="grid-sizer"></div>
+  <div class="masonry-brick grid-item" ng-repeat="pin in pins">
+      <img ng-src="{{ pin.url }}" alt="{{ pin.title }}">
+      <span class="heart-ac"></span><span class="like">3</span>
+  </div>
+</div>

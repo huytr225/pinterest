@@ -6,13 +6,13 @@ var userSchema=mongoose.Schema({
     email:String,
     password:String
   },
-  facebook: {
-    id: String,
-    token: String,
-    email: String,
-    name: String,
-    username: String,
-  }
+  pins:[{
+    title: String,
+    url: String,
+    like: [{
+      email: String
+    }]
+  }]
 });
 
 userSchema.methods.generateHash=function(password){

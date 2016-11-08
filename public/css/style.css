@@ -1,0 +1,68 @@
+body {
+  /*padding: 50px;*/
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+
+
+* { box-sizing: border-box; }
+
+/* force scrollbar */
+html { overflow-y: scroll; }
+
+body { font-family: sans-serif; }
+
+/*.container img{width: 500px}*/
+
+/* ---- grid ---- */
+
+/*.grid {*/
+/*  background: #DDD;*/
+/*}*/
+
+/* clear fix */
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+/* ---- .grid-item ---- */
+
+.grid-sizer,
+.grid-item {
+  width: 33.333%;
+}
+
+.grid-item {
+  float: left;
+}
+
+.grid-item img {
+  padding: 5px;
+  display: block;
+  max-width: 100%;
+}
+
+.heart-ac {
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    background: url(../img/hearts-xxl.png) no-repeat;
+    background-size: cover;
+}
+
+.like{
+    position: absolute;
+    right: 4px;
+    bottom: 9px;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    font-size: 25px;
+}
