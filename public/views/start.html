@@ -1,10 +1,14 @@
 
-<h1>Masonry - imagesLoaded progress</h1>
+
 
 <div masonry class="grid">
   <div class="grid-sizer"></div>
   <div class="masonry-brick grid-item" ng-repeat="pin in pins">
+    <a href="/#/pin/{{user}}/{{pin.user}}">
       <img ng-src="{{ pin.url }}" alt="{{ pin.title }}">
-      <span class="heart-ac"></span><span class="like">3</span>
+    </a>
+      <span ng-class="pin.isLike ? 'heart-ac' : 'heart-de'" ng-show="user" ng-click="likeOrUnlike($index)"></span>
+      <a class="heart-de" ng-hide="user" href='/#/login'></a>
+      <span class="like">{{pin.numLike}}</span>
   </div>
 </div>

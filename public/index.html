@@ -9,7 +9,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Grayscale - Start Bootstrap Theme</title>
+    <title>Pinterest</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -41,7 +41,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+    <style type="text/css">body{background-color: #16193B;}</style>
 </head>
 
 <body ng-app="pin" id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
@@ -54,8 +54,9 @@
                     Menu <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand page-scroll" href="/#/">
-                    <i class="fa fa-play-circle"></i> <span class="light"></span> Bootstrap
+                    <i class="fa fa-play-circle"></i> <span class="light"></span> Pinterest
                 </a>
+                
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -79,7 +80,10 @@
                         <a href="#page-top"></a>
                     </li>
                     <li>
-                        <a href="/#/pin/{{user}}" ><span class="fa fa-camera"></span> My Pinterest</a>
+                        <a href="/#/pin/{{user}}/{{user}}" ><span class="fa fa-camera"></span> My Pinterest</a>
+                    </li>
+                    <li>
+                        <a href="/users/logout" ><span class="fa fa-sign-out"></span> Logout</a>
                     </li>
                     
                 </ul>
@@ -91,7 +95,9 @@
     
     <!-- About Section -->
     <section id="about" class="container content-section text-center">
-       <h2>User = {{user}}</h2>
+       <h1 ng-show="user">Welcome {{user}} back to Pinterest</h1>
+       <h1 ng-hide="user">Welcome to Pinterest</h1>
+       <br>
        <div class="ui-view"></div>
     </section>
 
@@ -99,7 +105,7 @@
     <!-- Footer -->
     <footer>
         <div class="container text-center">
-            <p>Copyright &copy; Your Website 2016</p>
+            <p>Copyright &copy; HTT 2016</p>
         </div>
     </footer>
 

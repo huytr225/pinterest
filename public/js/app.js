@@ -20,7 +20,7 @@ angular.module('pin',[
                 controller:'UsersCtrl'
             })
             .state('pin',{
-                url:"/pin/:user",
+                url:"/pin/:me/:user",
                 templateUrl:'/views/pin.html',
                 controller:'PinCtrl'
             })

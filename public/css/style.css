@@ -53,14 +53,45 @@ body { font-family: sans-serif; }
     bottom: 10px;
     width: 30px;
     height: 30px;
-    background: url(../img/hearts-xxl.png) no-repeat;
+    background: url(../img/heart-ac.png) no-repeat;
     background-size: cover;
+}
+.heart-ac:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .5;
+}
+.heart-de {
+    position: absolute;
+    right: 30px;
+    bottom: 10px;
+    width: 30px;
+    height: 30px;
+    background: url(../img/heart-de.png) no-repeat;
+    background-size: cover;
+}
+.heart-de:hover {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+    opacity: .5;
 }
 
 .like{
     position: absolute;
     right: 4px;
     bottom: 9px;
+    width: 30px;
+    height: 30px;
+    background-size: cover;
+    font-size: 25px;
+}
+
+.close{
+    position: absolute;
+    right: 4px;
+    top: 5px;
     width: 30px;
     height: 30px;
     background-size: cover;

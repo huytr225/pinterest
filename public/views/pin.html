@@ -205,13 +205,16 @@ textarea {
     padding: 20px 10px;
 }
 </style>
-<h1>Masonry - imagesLoaded progress</h1>
-  <button id="myBtn" class="btn btn-btn-default">Add Pinterest</button>
+  
+  <button id="myBtn" class="btn btn-primary" ng-show="active">Add Pinterest</button>
   <div masonry class="grid">
   <div class="grid-sizer"></div>
   <div class="masonry-brick grid-item" ng-repeat="pin in pins">
+      <span class="close" ng-show="active" ng-click="remove($index)">x</span>
       <img ng-src="{{ pin.url }}" alt="{{ pin.title }}">
-      <span class="heart-ac"></span><span class="like">3</span>
+      <span ng-class="pin.isLike ? 'heart-ac' : 'heart-de'" ng-show="user" ng-click="likeOrUnlike($index)"></span>
+      <a class="heart-de" ng-hide="user" href='/#/login'></a>
+      <span class="like">{{pin.numLike}}</span>
   </div>
 </div>
 
@@ -224,13 +227,12 @@ textarea {
   <!-- Modal content -->
 <div class="modal-content">
   <div class="modal-header">
-    <span class="close">×</span>
+    <!--<span class="close">×</span>-->
     <h2>Add your own Pinterest</h2>
   </div>
   <div class="modal-body">
     
-      
-          <img src="../img/demo.jpeg" ng-src="{{url}}"></img>
+    <img src="../img/demo.jpeg" ng-src="{{url}}"></img>
       
     <div class="field-wrap">
         <label>
