@@ -94,10 +94,11 @@ angular.module('pin')
                 email: $scope.email,
                 password: $scope.password
             }).then(function (data) {
+                console.log(data);
                 if(data.data.message == "No user found.") {
                     $scope.messageLogin = "No user found.";
-                } else if (data.data.messageLogin == "Wrong password.") {
-                    $scope.message = "Wrong password.";
+                } else if (data.data.message == "Wrong password.") {
+                    $scope.messageLogin = "Wrong password.";
                 } else {
                     $rootScope.user = data.data.local.email;
                     $location.path('/');
