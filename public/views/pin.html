@@ -205,7 +205,7 @@ textarea {
     padding: 20px 10px;
 }
 </style>
-  
+  <h2>Take a look to {{currentUser}} pinterest</h2>
   <button id="myBtn" class="btn btn-primary" ng-show="active">Add Pinterest</button>
   <div masonry class="grid">
   <div class="grid-sizer"></div>
@@ -215,6 +215,9 @@ textarea {
       <span ng-class="pin.isLike ? 'heart-ac' : 'heart-de'" ng-show="user" ng-click="likeOrUnlike($index)"></span>
       <a class="heart-de" ng-hide="user" href='/#/login'></a>
       <span class="like">{{pin.numLike}}</span>
+  </div>
+  <div ng-if="pins.length == 0">
+    <h2>You have no pinterest yet.</h2>
   </div>
 </div>
 

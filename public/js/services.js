@@ -25,7 +25,29 @@ angular.module('users', ['ngResource'])
                 alert("Unable to connect to the server.");
             });
         };
-        
+        this.like = function(data){
+            return $http({
+                method: "POST",
+                url: "/like",
+                data: data
+            }).success(function (data) {
+                return data;
+            }).error(function (err) {
+                alert("Unable to connect to the server.");
+            });
+        }
+        this.unlike = function(data){
+            console.log(data);
+            return $http({
+                method: "POST",
+                url: "/unlike",
+                data: data
+            }).success(function (data) {
+                return data;
+            }).error(function (err) {
+                alert("Unable to connect to the server.");
+            });
+        }
         this.addPin = function (data) {
             return $http({
                 method: "POST",

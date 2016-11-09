@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pin')
-    .controller('StartCtrl', ['$scope', '$http', '$rootScope', function($scope, $http, $rootScope){
+    .controller('StartCtrl', ['$scope', '$http', '$rootScope', 'users', function($scope, $http, $rootScope, users){
         if($rootScope.user == undefined) $rootScope.user = false;
         var listLike = [];
         $http.get("/pin/"+$rootScope.user+"/all")
@@ -9,27 +9,54 @@ angular.module('pin')
                 $scope.pins = response.data;
             });
         $scope.likeOrUnlike = function(x){
-            console.log($scope.pins[x].isLike);
             if($scope.pins[x].isLike == true) {
                 $scope.pins[x].isLike = false;
                 $scope.pins[x].numLike--;
+                users.unlike({
+                    me: $rootScope.user,
+                    user : $scope.pins[x].user,
+                    title: $scope.pins[x].title
+                }).then(function (data) {
+                //   console.log(data);
+                });
             } else {
                 $scope.pins[x].isLike = true;
                 $scope.pins[x].numLike++;
+                users.like({
+                    me: $rootScope.user,
+                    user : $scope.pins[x].user,
+                    title: $scope.pins[x].title
+                }).then(function (data) {
+                //   console.log(data);
+                });
             }
         }
         
         
     }])
     .controller('PinCtrl', ['$scope', '$http', '$rootScope', '$location','$stateParams', '$state', 'users', function($scope, $http, $rootScope, $location, $stateParams, $state, users){
+        $scope.currentUser = $stateParams.user;
         $scope.likeOrUnlike = function(x){
-            console.log($scope.pins[x].isLike);
             if($scope.pins[x].isLike == true) {
                 $scope.pins[x].isLike = false;
                 $scope.pins[x].numLike--;
+                users.unlike({
+                    me: $rootScope.user,
+                    user : $stateParams.user,
+                    title: $scope.pins[x].title
+                }).then(function (data) {
+                //   console.log(data);
+                });
             } else {
                 $scope.pins[x].isLike = true;
                 $scope.pins[x].numLike++;
+                users.like({
+                    me: $rootScope.user,
+                    user : $stateParams.user,
+                    title: $scope.pins[x].title
+                }).then(function (data) {
+                //   console.log(data);
+                });
             }
         }
         $http.get("/pin/"+$rootScope.user+"/"+$stateParams.user)
