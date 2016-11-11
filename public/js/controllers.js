@@ -36,6 +36,21 @@ angular.module('pin')
     }])
     .controller('PinCtrl', ['$scope', '$http', '$rootScope', '$location','$stateParams', '$state', 'users', function($scope, $http, $rootScope, $location, $stateParams, $state, users){
         $scope.currentUser = $stateParams.user;
+        
+        $scope.openImg = function(x){
+            $scope.image = {
+                url : $scope.pins[x].url,
+                title: $scope.pins[x].title
+            };
+            $scope.openimage= {
+                "display": "block"
+            }
+        }
+        $scope.closeImg = function(x){
+            $scope.openimage= {
+                "display": "none"
+            }
+        }
         $scope.likeOrUnlike = function(x){
             if($scope.pins[x].isLike == true) {
                 $scope.pins[x].isLike = false;
@@ -69,6 +84,7 @@ angular.module('pin')
                 user : $rootScope.user,
                 title: $scope.pins[x].title
             }).then(function (data) {
+                console.log(data);
                $state.reload();
             });
         };
